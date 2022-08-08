@@ -40,10 +40,11 @@ const RecentEvent = () => {
 
       <div className="recentEventDivGrid">
         <div>
-          <img src={missionImg} alt="" className="recentEventDivGridImg" />
+        {missionImg&&missionImg.map(x=><div>
+          <div>
+          <img src={x.img} alt="" className="recentEventDivGridImg" />
         </div>
-        <div>
-          <img src={vissionImg} alt="" className="recentEventDivGridImg" />
+         </div>)}
         </div>
       </div>
     </div>
