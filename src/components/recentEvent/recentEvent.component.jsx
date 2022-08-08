@@ -1,10 +1,22 @@
 import "./recentEvent.style.css";
-import missionImg from "../../assets/missionImg.webp";
+//import missionImg from "../../assets/missionImg.webp";
 import vissionImg from "../../assets/vissionImg.webp";
 import "animate.css/animate.min.css";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-
+import axios from "axios";
+import {useEffect,useState} from "react";
 const RecentEvent = () => {
+  const [missionImg,setMissionImg] = useState(null);
+  const getImage=()=>{
+ axios.post("https://athirst-backend.herokuapp.com/get-img").then(res=>{
+   alert(res.data.message);
+   setMissionImg(res.data.data);
+ }).catch(err=>{alert(err.message)});
+};
+  useEffect(()=>{
+      getImage();
+  },[]);
+  
   return (
     <div className="recentEventDiv">
       <AnimationOnScroll
