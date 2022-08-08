@@ -13,7 +13,9 @@ import {
   faEnvelope,
   faBarsStaggered
 } from "@fortawesome/free-solid-svg-icons";
-
+const Handling=(e)=>{
+  //AxiosCont.post()
+};
 // const location = {
 //   address: "No. 12 Oyebola St., Ojota, Lagos, Nigeria, Africa.",
 //   lat: 6.58700061126983,
@@ -71,18 +73,20 @@ const Contact = () => {
               </p>
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="email" placeholder="Enter your Name" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>
                   <Form.Control type="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control type="password" placeholder="Password" />
+                  <Form.Label>Message</Form.Label>
+                  <Form.Control type="text" placeholder="Enter your message" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                  <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <button type="submit" className="contactSubmitBtn">
+                <button type="submit" onClick={()=>Handling(e)} className="contactSubmitBtn">
                   Submit
                 </button>
               </Form>
