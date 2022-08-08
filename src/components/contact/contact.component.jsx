@@ -6,16 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Icon } from "@iconify/react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
+import axios from "axios";
 import {
   faLocationDot,
   faPhone,
   faEnvelope,
   faBarsStaggered
 } from "@fortawesome/free-solid-svg-icons";
-const Handling=(e)=>{
-  //AxiosCont.post()
-};
+
+
 // const location = {
 //   address: "No. 12 Oyebola St., Ojota, Lagos, Nigeria, Africa.",
 //   lat: 6.58700061126983,
@@ -23,6 +22,11 @@ const Handling=(e)=>{
 // };
 // const zoomLevel = 10;
 const Contact = () => {
+  const getMail=()=>{
+ axios.post("https://athirst-backend.herokuapp.com/get-mail").then(res=>{
+   alert(res.data.message);
+ }).catch(err=>{alert(err.message)});
+};
   return (
     <div className="contactDiv" id="contact">
       <Container>
