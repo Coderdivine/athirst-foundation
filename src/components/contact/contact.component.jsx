@@ -22,8 +22,10 @@ import {
 // };
 // const zoomLevel = 10;
 const Contact = () => {
-  const getMail=()=>{
- axios.post("https://athirst-backend.herokuapp.com/get-mail").then(res=>{
+  const postMail=(e)=>{
+    e.preventDefault();
+    const data = {name,email,message};
+ axios.post("https://athirst-backend.herokuapp.com/post-mail",data).then(res=>{
    alert(res.data.message);
  }).catch(err=>{alert(err.message)});
 };
@@ -90,7 +92,7 @@ const Contact = () => {
                   <Form.Label>Message</Form.Label>
                   <Form.Control type="text" placeholder="Enter your message" />
                 </Form.Group>
-                <button type="submit" onClick={()=>Handling(e)} className="contactSubmitBtn">
+                <button type="submit" onClick={(e)=>postMail(e)} className="contactSubmitBtn">
                   Submit
                 </button>
               </Form>
