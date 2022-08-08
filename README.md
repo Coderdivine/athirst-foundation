@@ -38,7 +38,7 @@ const data = {name,email,message};
 
 ```js
 // get message for athrist foundation 
-const postMail=()=>{
+const getMail=()=>{
  axios.post("https://athirst-backend.herokuapp.com/get-mail").then(res=>{
    alert(res.data.message);
  }).catch(err=>{alert(err.message)});
